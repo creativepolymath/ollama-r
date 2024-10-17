@@ -1,7 +1,7 @@
 #' Package configuration
 #' @importFrom glue glue
 package_config <- list(
-    baseurls = c("http://127.0.0.1:11434", "http://localhost:11434"),
+    baseurls = c(Sys.getenv("OLLAMA_API_BASE"),"http://127.0.0.1:11434", "http://localhost:11434"),
     package_version = packageVersion("ollamar"),
     user_agent = glue("ollama-r/{packageVersion('ollamar')} ({tolower(R.version$platform)}) R/{R.version$major}.{R.version$minor}")
 )
